@@ -1,0 +1,225 @@
+PC Num,PC Name,AC Num,AC Name,Male,Female,Others,Male %,Female %,Others %,Total %
+1,Chikkodi,1,Nippani,76003,70235,0,75.29,73.23,0,74.29
+1,Chikkodi,2,Chikkodi-Sadalga,77054,70647,0,78.17,76.1,0,77.16
+1,Chikkodi,3,Athani,77336,67355,1,75.84,71.59,14.29,73.8
+1,Chikkodi,4,Kagwad,67223,58702,0,75.6,71.55,0,73.65
+1,Chikkodi,5,Kudachi,59470,48940,1,71.73,65.22,11.11,68.64
+1,Chikkodi,6,Raybag,67456,57913,0,74.57,71.39,0,73.06
+1,Chikkodi,7,Hukkeri,72424,68091,0,78.97,76.68,0,77.84
+1,Chikkodi,10,Yemkanamardi,67056,64703,0,78.4,76.47,0,77.44
+2,Belgaum,8,Arabhavi,77936,69180,0,75.53,69.84,0,72.74
+2,Belgaum,9,Gokak,75533,70578,0,71.69,68.18,0,69.95
+2,Belgaum,11,Belgaum-Uttar,66571,60945,0,62.52,58.23,0,60.38
+2,Belgaum,12,Belgaum-Dakshin,71942,63597,0,65.47,60.8,0,63.17
+2,Belgaum,13,Belgaum-Rural,79427,70234,0,72.58,67.32,0,70.01
+2,Belgaum,16,Bailahongal,63807,55663,0,73.8,66.97,0,70.45
+2,Belgaum,17,Saundatti-Yellamma,66632,58916,0,75.16,68.83,0,72.05
+2,Belgaum,18,Ramdurg,67861,59001,0,72.41,67.88,0,70.23
+3,Bagalkot,19,Mudhol,65699,60011,0,73.86,68.52,0,71.21
+3,Bagalkot,20,Terdal,79622,73113,0,76.38,72.38,0,74.4
+3,Bagalkot,21,Jamkhandi,68323,61141,0,72.69,66.95,0,69.86
+3,Bagalkot,22,Bilgi,74942,70151,0,73.88,70.13,0,72.01
+3,Bagalkot,23,Badami,69752,65400,0,67.9,65.15,0,66.54
+3,Bagalkot,24,Bagalkot,71204,67077,0,65.67,63.14,0,64.41
+3,Bagalkot,25,Hungund,66853,62927,0,66.16,62.36,0,64.26
+3,Bagalkot,68,Nargund,64976,57333,0,71.96,65.84,0,68.95
+4,Bijapur,26,Muddebihal,58265,51969,6,60.69,59.28,18.18,60.01
+4,Bijapur,27,Devara Hippargi,58570,50512,0,59.42,57.4,0,58.47
+4,Bijapur,28,Basavana Bagevadi,62416,54895,1,65.49,62.54,7.69,64.07
+4,Bijapur,29,Babaleshwar,66894,58101,0,67.15,61.6,0,64.45
+4,Bijapur,30,Bijapur City,66173,58833,0,55,51.46,0,53.27
+4,Bijapur,31,Nagthan,76251,63707,0,61.65,56.49,0,59.19
+4,Bijapur,32,Indi,69056,56605,0,62.81,57.68,0,60.39
+4,Bijapur,33,Sindgi,64806,51226,0,62.6,56.01,0,59.5
+5,Gulbarga,34,Afzalpur,62551,51554,0,59.96,53.56,0,56.89
+5,Gulbarga,35,Jevargi,68514,59156,0,64.94,57.75,0,61.39
+5,Gulbarga,39,Gurmitkal,61069,61245,0,57.14,57.56,0,57.35
+5,Gulbarga,40,Chittapur,63641,57978,0,61.18,57.41,0,59.32
+5,Gulbarga,41,Sedam,66479,63212,0,67.73,64.56,0,66.14
+5,Gulbarga,43,Gulbarga Rural,67524,60386,0,57.95,56.08,0,57.05
+5,Gulbarga,44,Gulbarga Dakshin,67241,61795,0,56.42,53.18,0,54.8
+5,Gulbarga,45,Gulbarga Uttar,65604,58899,0,53.12,51,0,52.08
+6,Raichur,36,Shorapur,70959,64540,0,60.15,56.68,0,58.44
+6,Raichur,37,Shahapur,59204,51819,0,59.41,53.08,0,56.27
+6,Raichur,38,Yadgir,57863,53231,0,57.29,52.85,0,55.07
+6,Raichur,53,Raichur Rural,70118,65099,0,68.07,62.05,0,65.01
+6,Raichur,54,Raichur,55326,50010,0,53.23,49.64,0,51.44
+6,Raichur,55,Manvi,66331,59499,0,62.13,55.25,0,58.65
+6,Raichur,56,Devadurga,66344,61553,0,67.48,62.85,0,65.16
+6,Raichur,57,Lingsugur,62170,54005,0,59.13,53.07,0,56.15
+7,Bidar,42,Chincholi,53403,49592,0,57.35,56.87,0,57.11
+7,Bidar,46,Aland,61810,52375,0,57.29,54.26,0,55.86
+7,Bidar,47,Basavakalyan,65986,59904,0,59.82,60.94,0,60.35
+7,Bidar,48,Humnabad,67910,62647,0,59.01,60.45,0,59.69
+7,Bidar,49,Bidar South,60427,53806,0,62.23,60.42,0,61.36
+7,Bidar,50,Bidar,62252,54629,1,60.77,57.96,6.67,59.42
+7,Bidar,51,Bhalki,70256,62954,0,63.67,63.68,0,63.67
+7,Bidar,52,Aurad,65621,58706,0,64.29,62.72,0,63.53
+8,Koppal,58,Sindhanur,67664,60456,0,65.47,58.41,0,61.93
+8,Koppal,59,Maski,53870,47385,2,62.28,54.92,13.33,58.6
+8,Koppal,60,Kushtagi,62924,56902,0,61.5,57.14,0,59.35
+8,Koppal,61,Kanakagiri,69125,64027,0,72.74,66.62,0,69.66
+8,Koppal,62,Gangavathi,63813,60068,0,71.01,66.87,0,68.94
+8,Koppal,63,Yelburga,67032,60735,0,70.25,66.16,0,68.24
+8,Koppal,64,Koppal,80714,74209,0,73.99,69.28,0,71.65
+8,Koppal,92,Siraguppa,60954,56805,0,68.85,62.81,0,65.79
+9,Bellary,88,Hadagali,61592,56070,0,71.63,68.26,0,69.98
+9,Bellary,89,Hagaribommanahalli,75432,69291,1,76.19,72.27,5.56,74.26
+9,Bellary,90,Vijayanagara,66095,61141,4,72.01,67.58,11.11,69.8
+9,Bellary,91,Kampli,70963,66559,0,75.04,70.58,0,72.81
+9,Bellary,93,Bellary,68997,65697,1,73.86,69.52,4.35,71.67
+9,Bellary,94,Bellary City,65468,62560,1,63.82,60.31,10,62.05
+9,Bellary,95,Sandur,67180,60598,1,72.59,68.06,3.13,70.36
+9,Bellary,96,Kudligi,66278,61524,1,73.07,70.83,11.11,71.98
+10,Haveri,65,Shirahatti,70852,62799,0,71.13,66.75,0,69.01
+10,Haveri,66,Gadag,70853,63748,0,69.74,64.13,0,66.96
+10,Haveri,67,Ron,73790,67875,0,69.55,65.6,0,67.6
+10,Haveri,82,Hangal,76534,66217,0,79.66,77.57,0,78.68
+10,Haveri,84,Haveri,78788,67016,0,72.7,68.14,0,70.53
+10,Haveri,85,Byadgi,76632,66165,0,78.06,73.45,0,75.85
+10,Haveri,86,Hirekerur,68193,58503,0,77.37,73.41,0,75.49
+10,Haveri,87,Ranebennur,79054,68309,0,73.01,67.66,0,70.42
+11,Dharwad,69,Navalgund,68579,55738,0,71.16,61.01,0,66.22
+11,Dharwad,70,Kundgol,64536,51727,0,71.51,62.25,0,67.07
+11,Dharwad,71,Dharwad,71076,60649,0,72.66,64.18,0,68.49
+11,Dharwad,72,Hubli-Dharwad-East,66978,59396,0,69.78,63.1,0,66.47
+11,Dharwad,73,Hubli-Dharwad-Central,73930,65391,0,64.46,57.87,0,61.18
+11,Dharwad,74,Hubli-Dharwad-West,74572,66415,0,62.86,56.57,0,59.72
+11,Dharwad,75,Kalaghatgi,67886,56917,0,75.23,68.15,0,71.83
+11,Dharwad,83,Shiggaon,74843,61463,0,71.98,66.74,0,69.52
+12,Uttara Kannada,14,Khanapur,67273,58256,0,67.88,64.52,0,66.27
+12,Uttara Kannada,15,Kittur,64454,56414,0,72.79,66.9,0,69.91
+12,Uttara Kannada,76,Haliyal,59977,55744,0,72.6,70.55,0,71.6
+12,Uttara Kannada,77,Karwar,68300,64846,0,63.67,60.77,0,62.22
+12,Uttara Kannada,78,Kumta,62966,59052,0,71.69,69.37,0,70.55
+12,Uttara Kannada,79,Bhatkal,65362,64210,0,64.28,66.83,0,65.52
+12,Uttara Kannada,80,Sirsi,70209,63566,0,76.9,72.01,0,74.5
+12,Uttara Kannada,81,Yellapur,62894,57311,0,77.46,74.53,0,76.03
+13,Davanagere,103,Jagalur,67647,61678,0,76.38,72.89,0,74.67
+13,Davanagere,104,Harapanahalli,76191,68841,0,78.05,73.64,0,75.89
+13,Davanagere,105,Harihar,75803,70041,1,75.26,70.19,9.09,72.73
+13,Davanagere,106,Davanagere North,75866,72159,0,67.02,63.46,0,65.23
+13,Davanagere,107,Davanagere South,65022,60745,0,67.59,63.62,0,65.6
+13,Davanagere,108,Mayakonda,73627,65736,0,80.4,75.59,0,78.06
+13,Davanagere,109,Channagiri,73003,66383,0,79.02,75.25,0,77.17
+13,Davanagere,110,Honnali,73787,67855,0,80.59,76.97,0,78.82
+14,Shimoga,111,Shimoga Rural,77621,70669,8,78.14,72.54,88.89,75.37
+14,Shimoga,112,Bhadravathi,68258,67116,1,65.62,62.87,14.29,64.23
+14,Shimoga,113,Shimoga,77219,73180,0,66.36,62.82,0,64.58
+14,Shimoga,114,Tirthahalli,67968,65882,0,77.6,75.19,0,76.39
+14,Shimoga,115,Shikaripura,71330,65620,0,79.31,75.34,0,77.35
+14,Shimoga,116,Sorab,72291,66036,0,79.87,75.89,0,77.92
+14,Shimoga,117,Sagar,70470,67540,0,76.1,72.51,0,74.29
+14,Shimoga,118,Baindur,67122,80711,1,68.72,74.99,6.67,72
+15,Udupi Chikmagalur,119,Kundapur,67325,76502,0,74.95,77.52,0,76.29
+15,Udupi Chikmagalur,120,Udupi,71263,75286,1,77.09,76.57,5.88,76.81
+15,Udupi Chikmagalur,121,Kaup,59137,66887,0,76.57,76.58,0,76.58
+15,Udupi Chikmagalur,122,Karkala,62523,69896,0,79.08,78.9,0,78.99
+15,Udupi Chikmagalur,123,Sringeri,60107,58786,0,78.5,75.96,0,77.22
+15,Udupi Chikmagalur,124,Mudigere,58356,55068,0,74.72,69.85,0,72.27
+15,Udupi Chikmagalur,125,Chickamagalur,68890,64313,0,69.12,65.71,0,67.43
+15,Udupi Chikmagalur,126,Tarikere,62961,55072,0,73.37,68.24,0,70.88
+16,Hassan,127,Kadur,65508,58508,0,68.53,63.75,0,66.19
+16,Hassan,193,Shravanabelagola,72318,72932,0,73.68,74.68,0,74.18
+16,Hassan,194,Arsikere,75099,72042,4,73.83,70.85,16.67,72.33
+16,Hassan,195,Belur,66771,61718,0,72.61,69.61,0,71.14
+16,Hassan,196,Hassan,69454,67682,0,69.69,67.88,0,68.78
+16,Hassan,197,Holenarasipur,80653,78594,0,78.66,78.2,0,78.43
+16,Hassan,198,Arakalgud,83416,78873,0,79.33,80.44,0,79.86
+16,Hassan,199,Sakaleshpur,72450,70332,0,77.43,75.45,0,76.44
+17,Dakshina Kannada,200,Belthangady,78498,75535,0,77.2,76.3,0,76.75
+17,Dakshina Kannada,201,Moodabidri,64802,71074,1,74.39,75.5,11.11,74.96
+17,Dakshina Kannada,202,Mangalore City North,78661,82610,0,74.43,75.15,0,74.79
+17,Dakshina Kannada,203,Mangalore City South,72801,79430,0,69.88,70.14,0,70.01
+17,Dakshina Kannada,204,Mangalore,64033,66729,0,74.13,75.03,0,74.58
+17,Dakshina Kannada,205,Bantwal,80114,82085,0,79.65,81.4,0,80.52
+17,Dakshina Kannada,206,Puttur,77204,76560,0,81.93,83.15,0,82.53
+17,Dakshina Kannada,207,Sullia,79358,77667,0,84.65,84.18,0,84.42
+18,Chitradurga,97,Molakalmuru,74792,67568,0,67.25,63.57,0,65.45
+18,Chitradurga,98,Challakere,68991,63834,0,69.73,66.11,0,67.94
+18,Chitradurga,99,Chitradurga,78603,72605,0,66.72,61.9,0,64.31
+18,Chitradurga,100,Hiriyur,70954,64976,0,62.93,58.3,0,60.62
+18,Chitradurga,101,Hosadurga,65496,59411,1,70.75,67.9,33.33,69.37
+18,Chitradurga,102,Holalkere,78681,67383,0,73.07,66.49,0,69.88
+18,Chitradurga,136,Sira,73900,69029,0,69.88,67.66,0,68.79
+18,Chitradurga,137,Pavagada,62273,58883,0,63.63,62.79,0,63.22
+19,Tumkur,128,Chikknayakanhalli,75123,71659,0,73.7,71.45,0,72.59
+19,Tumkur,129,Tiptur,66762,64094,11,76.73,71.71,47.83,74.18
+19,Tumkur,130,Turuvekere,63535,61885,1,71.09,68.84,25,69.96
+19,Tumkur,132,Tumkur City,75110,71378,0,64.53,61.69,0,63.11
+19,Tumkur,133,Tumkur Rural,73833,68616,0,79.82,76.27,0,78.07
+19,Tumkur,134,Koratagere,74445,70434,0,77.79,75.98,0,76.89
+19,Tumkur,135,Gubbi,69077,64254,0,79.05,75.51,0,77.3
+19,Tumkur,138,Madhugiri,67159,63241,0,71.46,69.68,0,70.59
+20,Mandya,186,Malavalli,83399,79152,0,68.76,67.64,0,68.21
+20,Mandya,187,Maddur,73599,72472,0,73.02,71.11,0,72.06
+20,Mandya,188,Melukote,77398,75220,0,79.69,76.98,0,78.33
+20,Mandya,189,Mandya,75683,74095,5,65.1,63.02,16.13,64.05
+20,Mandya,190,Shrirangapattana,77760,74982,0,76.24,72.74,0,74.48
+20,Mandya,191,Nagamangala,69846,70199,0,67.27,68.97,0,68.11
+20,Mandya,192,Krishnarajpet,74401,73334,0,74.38,76.48,0,75.4
+20,Mandya,211,Krishnarajanagara,72357,67803,3,74.38,71.35,42.86,72.88
+21,Mysore,208,Madikeri,77744,77938,0,74.52,73.19,0,73.85
+21,Mysore,209,Virajpet,68979,65104,0,66.15,62.47,0,64.3
+21,Mysore,210,Piriyapatna,68574,62124,0,79.81,75.81,0,77.85
+21,Mysore,212,Hunsur,81779,75193,1,77.51,73.83,20,75.7
+21,Mysore,215,Chamundeshwari,94584,86649,9,72.33,69.3,33.33,70.84
+21,Mysore,216,Krishnaraja,68979,64608,0,60.64,56.38,0,58.49
+21,Mysore,217,Chamaraja,65760,59714,0,60.54,55.97,0,58.27
+21,Mysore,218,Narasimharaja,65256,62143,2,57.65,54.59,5.26,56.1
+22,Chamarajnagar,213,Heggadadevankote,73732,68768,1,73.21,70.43,16.67,71.84
+22,Chamarajnagar,214,Nanjangud,72310,66319,0,73.88,70.77,0,72.36
+22,Chamarajnagar,219,Varuna,77440,69462,0,75.24,71.34,0,73.34
+22,Chamarajnagar,220,T. Narasipur,65329,60587,0,70.27,66.95,0,68.63
+22,Chamarajnagar,221,Hanur,67958,64463,0,68.36,68.32,0,68.34
+22,Chamarajnagar,222,Kollegal,74321,70908,5,73.83,71.68,100,72.77
+22,Chamarajnagar,223,Chamarajanagar,74712,70929,0,77.08,73.7,0,75.4
+22,Chamarajnagar,224,Gundlupet,79215,76092,2,81.09,77.97,18.18,79.53
+23,Bangalore Rural,131,Kunigal,68372,67310,0,76.36,76.77,0,76.56
+23,Bangalore Rural,154,Rajarajeshwarinagar,115351,101598,1,56.68,55.52,2.27,56.13
+23,Bangalore Rural,176,Bangalore South,145295,123429,1,54.61,53.8,1.23,54.22
+23,Bangalore Rural,177,Anekal,102775,87693,10,63.03,61.47,19.61,62.3
+23,Bangalore Rural,182,Magadi,84741,80603,0,78.95,78.58,0,78.76
+23,Bangalore Rural,183,Ramanagaram,75739,72597,0,78.72,76.39,0,77.55
+23,Bangalore Rural,184,Kanakapura,86569,82499,0,80.25,76.77,0,78.51
+23,Bangalore Rural,185,Channapatna,79809,80782,0,78.19,75.91,0,77.03
+24,Bangalore North,151,K.R. Pura,108843,94720,10,54.16,52.71,10.53,53.46
+24,Bangalore North,152,Byatarayanapura,115425,102492,8,59.56,58.77,14.81,59.18
+24,Bangalore North,153,Yeshwanthapura,119407,106292,0,59.9,58.41,0,59.18
+24,Bangalore North,155,Dasarahalli,110357,90563,0,52.78,51.66,0,52.26
+24,Bangalore North,156,Mahalakshmi Layout,80722,71495,0,58.21,56.03,0,57.16
+24,Bangalore North,158,Malleshwaram,63264,57124,0,63.53,59.44,0,61.52
+24,Bangalore North,159,Hebbal,66726,59032,0,56.69,54.17,0,55.47
+24,Bangalore North,160,Pulakeshinagar,56154,52746,0,56.17,54.69,0,55.44
+25,Bangalore Central,160,Sarvagnanagar,83229,75477,2,53.36,50.58,6.45,52
+25,Bangalore Central,161,C.V. Raman Nagar,68780,59527,16,56.47,54.9,20.51,55.72
+25,Bangalore Central,162,Shivajinagar,52134,46512,0,56.54,52.46,0,54.54
+25,Bangalore Central,163,Shantinagar,57350,53139,0,56.35,54.29,0,55.33
+25,Bangalore Central,164,Gandhinagar,62993,53258,0,57.69,53.81,0,55.85
+25,Bangalore Central,165,Rajajinagar,61812,54513,0,61.9,57.57,0,59.79
+25,Bangalore Central,168,Chamrajapet,58092,49273,1,56.3,52.54,7.14,54.5
+25,Bangalore Central,174,Mahadevapura,130203,109071,8,57.65,57.76,7.02,57.69
+26,Bangalore South,166,Govindarajanagar,75971,65608,0,55.21,53.26,0,54.28
+26,Bangalore South,167,Vijayanagar,78340,66556,8,55.29,52.49,8.6,53.95
+26,Bangalore South,169,Chickpet,64470,55605,0,60.43,56.32,0,58.45
+26,Bangalore South,170,Basavanagudi,65980,57019,0,57.5,53.28,0,55.46
+26,Bangalore South,171,Padmanabanagar,77147,68907,0,60.79,58.29,0,59.58
+26,Bangalore South,172,B.T.M Layout,72318,62779,0,56.3,54.87,0,55.62
+26,Bangalore South,173,Jayanagar,58309,52902,1,61.01,57.57,4,59.32
+26,Bangalore South,175,Bommanahalli,104487,86621,1,52.53,51.76,1.41,52.17
+27,Chikkaballapur,139,Gauribidanur,75314,71733,1,76.85,74.31,25,75.59
+27,Chikkaballapur,140,Bagepalli,70969,68599,1,77.44,75.66,12.5,76.55
+27,Chikkaballapur,141,Chikkaballapur,77487,72984,0,83.06,80.26,0,81.67
+27,Chikkaballapur,150,Yelahanka,109228,98855,3,65.08,63.13,8.33,64.13
+27,Chikkaballapur,178,Hosakote,86885,80751,1,87.41,84.34,7.69,85.9
+27,Chikkaballapur,179,Devanahalli,81176,75557,0,83.72,80.1,0,81.93
+27,Chikkaballapur,180,Doddaballapur,77613,71802,0,78.7,75.9,0,77.32
+27,Chikkaballapur,181,Nelamangala,73694,68437,0,75.36,72.06,0,73.73
+28,Kolar,142,Sidlaghatta,75253,69392,0,81.18,76.59,0,78.91
+28,Kolar,143,Chintamani,77821,73198,5,79.21,75.51,20,77.37
+28,Kolar,144,Srinivasapur,79479,74812,0,80.24,77.27,0,78.77
+28,Kolar,145,Mulbagal,70528,65994,0,75.21,72.85,0,74.05
+28,Kolar,146,Kolar Gold Field,57548,54278,2,64.47,62.06,6.9,63.27
+28,Kolar,147,Bangarapet,70686,66674,0,77.96,75.39,0,76.68
+28,Kolar,148,Kolar,79991,74680,0,76.59,72.6,0,74.59
+28,Kolar,149,Malur,70396,64792,0,82.2,77.88,0,80.07
