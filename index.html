@@ -12,7 +12,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-var rsr = new Raphael(0, 0, 1051.9, 1487.8);
+var rsr = new Raphael('raphael_container', 1051.9, 1487.8);
 
 var acg2993 = rsr.set();
 var ac52 = rsr.path("m563.79,1057c0.97761-2.6853,2.6028-4.427,4.0802-1.4401,1.7514-0.5975-0.15345-4.6565,2.1601-6.7203,5.576,0.9821,5.1224-3.4424,2.6401-5.2802,0.94844-3.5331-3.1402-3.4327-3.8402-5.0403-4.4457-1.4664,4.7247-4.4085,6.9603-2.6401,3.1916,1.6358,1.0316-6.7248,5.2802-6.2403,3.1262,1.0038,7.161,0.9763,6.2403,5.7603,2.471,0.4443,5.9186-4.5268,8.4004-2.6401,3.0921-0.8519,5.0405-2.1374,1.2001-3.8402-4.0754-2.047,2.1577-6.9644-3.1202-8.6404,0.75486-3.0212,4.6712-6.5526,4.0802-10.56,2.6589-7.4763-9.851-5.2598-6.4803-11.761-3.0414,0.0721-7.7337,6.5971-6.7203,0.96004-2.4278-3.9864-2.7926-1.4244-6.0003,0-2.1835,1.3443-0.6692,8.8633-4.0802,5.0402-1.2231-6.7595-7.8206-0.4137-2.6401,3.3602-2.5384,1.9609-5.6798-1.3138-7.6804,3.3601-3.7761-0.4265-6.5326,1.8086-9.6004,2.6401-0.9205,4.7597-4.2323,2.1574-5.5203,1.6801-1.7235,5.7361-1.4197-1.7739-5.0402-1.4401-0.0809,4.3134-1.8641,5.2924-4.8002,2.4001-3.3706,3.292-1.4442,8.2177,0.24001,9.3605-0.51391,3.3196,2.8691,4.8209,4.0802,8.6403,4.5173-2.9085,4.4526,0.1453,3.1201,3.3602,0.36842,1.4307,2.691,0.9207,3.6002,4.5602-2.9044,1.1839,2.8045,3.674,2.4001,4.3202-3.8519,3.322,2.2675,5.3351,4.3202,6.4803,2.7796,1.3653,5.2326,1.9054,6.7203,4.3202zm-5.2802,2.4001c5.8333-0.5005-4.7094-6.0789-1.6801-0.7201-0.28606,0.9273,0.49445,1.3367,1.6801,0.7201z").attr({id: 'ac52',"stroke-width": '0.33',"stroke-opacity": '1',stroke: '#000500',"stroke-miterlimit": '7.84955740000000010',"stroke-dasharray": 'none',fill: 'none',parent: 'acg2993'}).transform("m1.25,0,0,-1.25,0,1487.7992").data('id', 'ac52');
@@ -470,6 +470,7 @@ acg2993.push(
 	ac51
 );
 
+var minTurnout = 100, maxTurnout = 0;
 
 $.get('MasterDB.csv',function(data){
 	var choroMap = {};
@@ -478,21 +479,69 @@ $.get('MasterDB.csv',function(data){
     var cols = newData[0].length;
     for(var i=0; i < rows; i++) {
     	choroMap['ac' + newData[i][2]]= newData[i][10];
+    	choroMap['ac' + newData[i][2]+'title']= newData[i][3];
+    	if(newData[i][10] < minTurnout) {
+    		minTurnout = newData[i][10];
+    	}
+    	if(newData[i][10] > maxTurnout) {
+    		maxTurnout = newData[i][10];
+    	}
     }
+	var minFrac = 300, maxFrac = -1;
+
 
 	rsr.forEach(function (el) {
-		var r = 255;
-		var b = 255;
-		var g = 255*choroMap[el.data('id')]/100;
+		var fraction = 0;
+		if(typeof choroMap[el.data('id')] != 'undefined') {
+			fraction = 1 - ((choroMap[el.data('id')] - minTurnout)/(maxTurnout - minTurnout));
+		}
+		var b = 0;
+		var g = 0;
+		var r = 255*fraction;
+		if(r< minFrac) {
+			minFrac = r;
+		}
+		if(r > maxFrac) {
+			maxFrac = r;
+		}
+
+		//console.log(el.data('id')+":"+choroMap[el.data('id')] +","+fraction);
     	el.attr({fill: "rgb("+r+", "+g+", "+b+")" });
+    	el.attr({title: choroMap[el.data('id')+'title'] });
 	});
+
+	//console.log(minTurnout+"<" + maxTurnout + "," + minFrac + "<" + maxFrac);
 
 },dataType='text');
 
 
-rsr.setViewBox(100,100,2000, 3000, true);
+rsr.setViewBox(100, 600, 2300, 2300, true);
 });
 </script>
+<h1> Karnataka Voter Analytics </h1>
+<div id='raphael_container' style='float: left; width: 600px'></div>
+<div id='controls' style='float: left;'>
 
+<h3>Map type</h3>
+<ul>
+	<li>Turnout summary</li>
+	<li>Swing statistics</li>
+</ul>
+<h4>Info box</h4>
+<ul>
+	<li>Element: </li>
+	<li>Turnout:T% (M%,F%,O%)</li>
+</ul>
+<h4>Detail level</h4>
+<ul>
+	<li>Parliamentary constituencies</li>
+	<li>Assembly constituencies</li>
+</ul>
+<h4>Display</h4>
+<ul>
+	<li>Zoom bar</li>
+	<li>Gradient legend</li>
+</ul>
+</div>
 </body>
 </html>
