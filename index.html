@@ -3,7 +3,7 @@
 <head>
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
-<title>Karnataka Voter Analytics</title>
+<title>Voter Analytics - Karnataka</title>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.csv-0.71.min.js"></script>
 <script type="text/javascript" src="js/raphael-min.js"></script>
@@ -470,57 +470,113 @@ acg2993.push(
 	ac51
 );
 
-var minTurnout = 100, maxTurnout = 0;
 
-$.get('MasterDB.csv',function(data){
-	var choroMap = {};
-    var newData = $.csv.toArrays(data);
-    var rows = newData.length;
-    var cols = newData[0].length;
-    for(var i=0; i < rows; i++) {
-    	choroMap['ac' + newData[i][2]]= newData[i][10];
-    	choroMap['ac' + newData[i][2]+'title']= newData[i][3];
-    	if(newData[i][10] < minTurnout) {
-    		minTurnout = newData[i][10];
-    	}
-    	if(newData[i][10] > maxTurnout) {
-    		maxTurnout = newData[i][10];
-    	}
-    }
-	var minFrac = 300, maxFrac = -1;
+function processCsv(data) {
+	var minTurnout = 100, maxTurnout = 0;
 
-
-	rsr.forEach(function (el) {
-		var fraction = 0;
-		if(typeof choroMap[el.data('id')] != 'undefined') {
-			fraction = 1 - ((choroMap[el.data('id')] - minTurnout)/(maxTurnout - minTurnout));
-		}
-		var b = 0;
-		var g = 0;
-		var r = 255*fraction;
-		if(r< minFrac) {
-			minFrac = r;
-		}
-		if(r > maxFrac) {
-			maxFrac = r;
+	if($("input[name=detailgroup]:checked", "#detail").val() == 'ac'){
+		//Assembly constituencies
+		var choroMap = {};
+		var newData = $.csv.toArrays(data);
+		var rows = newData.length;
+		var cols = newData[0].length;
+		for(var i=0; i < rows; i++) {
+			choroMap['ac' + newData[i][2]]= newData[i][10];
+			choroMap['ac' + newData[i][2]+'title']= newData[i][3];
+			if(newData[i][10] < minTurnout) {
+				minTurnout = newData[i][10];
+			}
+			if(newData[i][10] > maxTurnout) {
+				maxTurnout = newData[i][10];
+			}
 		}
 
-		//console.log(el.data('id')+":"+choroMap[el.data('id')] +","+fraction);
-    	el.attr({fill: "rgb("+r+", "+g+", "+b+")" });
-    	el.attr({title: choroMap[el.data('id')+'title'] });
-	});
+		rsr.forEach(function (el) {
+			var fraction = 0;
+			if(typeof choroMap[el.data('id')] != 'undefined') {
+				fraction = 1 - ((choroMap[el.data('id')] - minTurnout)/(maxTurnout - minTurnout));
+			}
+			var b = 0;
+			var g = 0;
+			var r = 255*fraction;
+			el.attr({fill: "rgb("+r+", "+g+", "+b+")" });
+			el.attr({title: choroMap[el.data('id')+'title'] });
+		});
+	} else {
+		var choroMap = {};
+		var assyToParlyMap = {};
+		var parlyAverages = {};
+		var parlyNames = {};
+		var parlyCounts = {};
+		var newData = $.csv.toArrays(data);
+		var rows = newData.length;
+		var cols = newData[0].length;
+		for(var i=0; i < rows; i++) {
+			var parly = newData[i][0];
+			//add this AC to it's PC's set
+			assyToParlyMap['ac' + newData[i][2]] = parly;
 
-	//console.log(minTurnout+"<" + maxTurnout + "," + minFrac + "<" + maxFrac);
+			if(typeof parlyAverages[parly] == 'undefined') {
+				parlyAverages[parly] = 0;
+			}
+			if(typeof parlyNames[parly] == 'undefined') {
+				parlyNames[parly] = newData[i][1];
+			}
+			parlyAverages[parly] += parseInt(newData[i][10]);
 
-},dataType='text');
+			if(typeof parlyCounts[parly] == 'undefined') {
+				parlyCounts[parly] = 0;
+			}
+			parlyCounts[parly] += 1;
+		}
 
+		$.each(parlyCounts, function(key, value) {
+			console.log(parlyAverages[key]);
+			parlyAverages[key] /= parlyCounts[key]
+			console.log(parlyAverages[key]);
+			if(parlyAverages[key] < minTurnout) {
+				minTurnout = parlyAverages[key];
+			}
+			if(parlyAverages[key] > maxTurnout) {
+				maxTurnout = parlyAverages[key];
+			}
+		});
 
-rsr.setViewBox(100, 600, 2300, 2300, true);
+		rsr.forEach(function (el) {
+			var fraction = 0;
+			//console.log(el.data('id'));
+			var value = parlyAverages[assyToParlyMap[el.data('id')]];
+			//console.log(value);
+			fraction = 1 - ((value - minTurnout)/(maxTurnout - minTurnout));
+			var r = 255*fraction;
+			var b = 255*fraction;
+			var g = 255*fraction;
+			el.attr({fill: "rgb("+r+", "+g+", "+b+")" });
+			el.attr({title: "PC:" + parlyNames[assyToParlyMap[el.data('id')]] });
+		});
+
+	}
+}
+
+function updateMap() {
+	$.get('MasterDB.csv', processCsv , dataType='text');
+	rsr.setViewBox(100, 600, 2300, 2300, true);
+}
+
+$("input[name='detailgroup']").change(function(e){
+	updateMap();
 });
+
+updateMap();
+
+});
+
+
+
 </script>
-<h1> Karnataka Voter Analytics </h1>
-<div id='raphael_container' style='float: left; width: 600px'></div>
-<div id='controls' style='float: left;'>
+<h1>Voter Analytics - Karnataka at the LS elections </h1>
+<div id='raphael_container' style='position: fixed; top: 50px; left: 100px; width: 600px'></div>
+<div id='controls' style='position: fixed; top: 50px; left:700px; width: 600px'>
 
 <h3>Map type</h3>
 <ul>
@@ -533,10 +589,10 @@ rsr.setViewBox(100, 600, 2300, 2300, true);
 	<li>Turnout:T% (M%,F%,O%)</li>
 </ul>
 <h4>Detail level</h4>
-<ul>
-	<li>Parliamentary constituencies</li>
-	<li>Assembly constituencies</li>
-</ul>
+<div id='detail'>
+	<input type='radio' name ='detailgroup' value='ac' checked>Assembly constituencies</input><br />
+	<input type='radio' name ='detailgroup' value='pc'>Parliamentary constituencies</input>
+</div>
 <h4>Display</h4>
 <ul>
 	<li>Zoom bar</li>
