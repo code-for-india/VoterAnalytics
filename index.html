@@ -7,8 +7,9 @@
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.csv-0.71.min.js"></script>
 <script type="text/javascript" src="js/raphael-min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body style="font-family: 'Lora', sans-serif;">
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -474,96 +475,52 @@ acg2993.push(
 function processCsv(data) {
 	var minTurnout = 100, maxTurnout = 0;
 
-	if($("input[name=detailgroup]:checked", "#detail").val() == 'ac'){
-		//Assembly constituencies
-		var choroMap = {};
-		var newData = $.csv.toArrays(data);
-		var rows = newData.length;
-		var cols = newData[0].length;
-		for(var i=0; i < rows; i++) {
-			choroMap['ac' + newData[i][2]]= newData[i][10];
-			choroMap['ac' + newData[i][2]+'title']= newData[i][3];
-			if(newData[i][10] < minTurnout) {
-				minTurnout = newData[i][10];
-			}
-			if(newData[i][10] > maxTurnout) {
-				maxTurnout = newData[i][10];
-			}
+	//Assembly constituencies
+	var choroMap = {};
+	var newData = $.csv.toArrays(data);
+	var rows = newData.length;
+	var cols = newData[0].length;
+	for(var i=0; i < rows; i++) {
+		choroMap[newData[i][0]]= newData[i][2];
+		choroMap[newData[i][0]+'title']= newData[i][1];
+		if(newData[i][2] < minTurnout) {
+			minTurnout = newData[i][2];
 		}
+		if(newData[i][2] > maxTurnout) {
+			maxTurnout = newData[i][2];
+		}
+	}
 
-		rsr.forEach(function (el) {
-			var fraction = 0;
-			if(typeof choroMap[el.data('id')] != 'undefined') {
-				fraction = 1 - ((choroMap[el.data('id')] - minTurnout)/(maxTurnout - minTurnout));
-			}
+	rsr.forEach(function (el) {
+		var fraction = 0;
+		if(typeof choroMap[el.data('id')] != 'undefined') {
+			fraction = ((choroMap[el.data('id')] - minTurnout)/(maxTurnout - minTurnout));
 			var b = 0;
 			var g = 0;
 			var r = 255*fraction;
 			el.attr({fill: "rgb("+r+", "+g+", "+b+")" });
 			el.attr({title: choroMap[el.data('id')+'title'] });
-		});
-	} else {
-		var choroMap = {};
-		var assyToParlyMap = {};
-		var parlyAverages = {};
-		var parlyNames = {};
-		var parlyCounts = {};
-		var newData = $.csv.toArrays(data);
-		var rows = newData.length;
-		var cols = newData[0].length;
-		for(var i=0; i < rows; i++) {
-			var parly = newData[i][0];
-			//add this AC to it's PC's set
-			assyToParlyMap['ac' + newData[i][2]] = parly;
-
-			if(typeof parlyAverages[parly] == 'undefined') {
-				parlyAverages[parly] = 0;
-			}
-			if(typeof parlyNames[parly] == 'undefined') {
-				parlyNames[parly] = newData[i][1];
-			}
-			parlyAverages[parly] += parseInt(newData[i][10]);
-
-			if(typeof parlyCounts[parly] == 'undefined') {
-				parlyCounts[parly] = 0;
-			}
-			parlyCounts[parly] += 1;
+		} else {
+			el.attr({fill: "rgb(255, 255, 255)" });
 		}
-
-		$.each(parlyCounts, function(key, value) {
-			console.log(parlyAverages[key]);
-			parlyAverages[key] /= parlyCounts[key]
-			console.log(parlyAverages[key]);
-			if(parlyAverages[key] < minTurnout) {
-				minTurnout = parlyAverages[key];
-			}
-			if(parlyAverages[key] > maxTurnout) {
-				maxTurnout = parlyAverages[key];
-			}
-		});
-
-		rsr.forEach(function (el) {
-			var fraction = 0;
-			//console.log(el.data('id'));
-			var value = parlyAverages[assyToParlyMap[el.data('id')]];
-			//console.log(value);
-			fraction = 1 - ((value - minTurnout)/(maxTurnout - minTurnout));
-			var r = 255*fraction;
-			var b = 255*fraction;
-			var g = 255*fraction;
-			el.attr({fill: "rgb("+r+", "+g+", "+b+")" });
-			el.attr({title: "PC:" + parlyNames[assyToParlyMap[el.data('id')]] });
-		});
-
-	}
+	});
 }
 
+
 function updateMap() {
-	$.get('MasterDB.csv', processCsv , dataType='text');
+	var getStr = 'dataVendor.php?detail='+$("input[name=detailgroup]:checked", "#detail").val()+'&dataset='+$("input[name=datasetgroup]:checked", "#dataset").val()+'&type='+$("input[name=typegroup]:checked", "#type").val();
+	//alert(getStr);
+	$.get(getStr, processCsv , dataType='text');
 	rsr.setViewBox(100, 600, 2300, 2300, true);
 }
 
 $("input[name='detailgroup']").change(function(e){
+	updateMap();
+});
+$("input[name='datasetgroup']").change(function(e){
+	updateMap();
+});
+$("input[name='typegroup']").change(function(e){
 	updateMap();
 });
 
@@ -574,30 +531,28 @@ updateMap();
 
 
 </script>
-<h1>Voter Analytics - Karnataka at the LS elections </h1>
-<div id='raphael_container' style='position: fixed; top: 50px; left: 100px; width: 600px'></div>
-<div id='controls' style='position: fixed; top: 50px; left:700px; width: 600px'>
+<h1>Voter Analytics - Karnataka</h1>
+<div id='raphael_container' style='position: fixed; top: 75px; left: 100px; width: 450px'></div>
+<div id='controls' style='position: fixed; top: 50px; left:550px; width: 600px'>
 
-<h3>Map type</h3>
-<ul>
-	<li>Turnout summary</li>
-	<li>Swing statistics</li>
-</ul>
-<h4>Info box</h4>
-<ul>
-	<li>Element: </li>
-	<li>Turnout:T% (M%,F%,O%)</li>
-</ul>
+<h4>Dataset</h4>
+<div id='dataset'>
+	<input type='radio' name ='datasetgroup' value='2014' checked>2014 LS elections</input><br />
+	<input type='radio' name ='datasetgroup' value='2009'>2009 LS elections</input><br />
+	<input type='radio' name ='datasetgroup' value='trend'>1989-2004 LS INC vs Independents</input>
+</div>
+<h4>Analysis type</h3>
+<div id='type'>
+	<input type='radio' name ='typegroup' value='turnout' checked>Voter Turnout</input><br />
+	<input type='radio' name ='typegroup' value='swing'>Independent Candidate Impact</input><br />
+	<!--<input type='radio' name ='typegroup' value='delineation'>Delineation Impact</input><br />-->
+	<input type='radio' name ='typegroup' value='indcorr'>Independent Candidate Correlation</input>
+</div>
 <h4>Detail level</h4>
 <div id='detail'>
-	<input type='radio' name ='detailgroup' value='ac' checked>Assembly constituencies</input><br />
-	<input type='radio' name ='detailgroup' value='pc'>Parliamentary constituencies</input>
+	<input type='radio' name ='detailgroup' value='pc' checked>Parliamentary constituencies</input><br />
+	<input type='radio' name ='detailgroup' value='ac'>Assembly constituencies</input>
 </div>
-<h4>Display</h4>
-<ul>
-	<li>Zoom bar</li>
-	<li>Gradient legend</li>
-</ul>
 </div>
 </body>
 </html>
